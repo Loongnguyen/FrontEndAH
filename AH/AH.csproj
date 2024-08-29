@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA75299E-5125-4042-BE23-DB47A0CCFFE9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AH</RootNamespace>
+    <AssemblyName>AH</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44336</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChiTietBaiViet.aspx" />
+    <Content Include="ChuDeBaiViet.aspx" />
+    <Content Include="control\bannerArticleCategory.ascx" />
+    <Content Include="control\bannerArticleDetails.ascx" />
+    <Content Include="control\bannerBusinees.ascx" />
+    <Content Include="control\bannerPromotion.ascx" />
+    <Content Include="control\contentArticledetails.ascx" />
+    <Content Include="control\contentBusinees.ascx" />
+    <Content Include="control\contentLiveStrong.ascx" />
+    <Content Include="control\detailedDescription.ascx" />
+    <Content Include="control\endArticleCategory.ascx" />
+    <Content Include="control\girdArticleCategory.ascx" />
+    <Content Include="control\promotionPageArticles.ascx" />
+    <Content Include="control\recruitmentPageArticles.ascx" />
+    <Content Include="control\RelatedArticlesDetails.ascx" />
+    <Content Include="control\sliderLiveStrong.ascx" />
+    <Content Include="control\topArticleCategory.ascx" />
+    <Content Include="control\topDescriptionProduct.ascx" />
+    <Content Include="control\topRecruitment.ascx" />
+    <Content Include="ChiTietSanPham.aspx" />
+    <Content Include="KhuyenMai.aspx" />
+    <Content Include="SanPham.aspx" />
+    <Content Include="Script\css\style.css" />
+    <Content Include="Script\images\abc 1-1.png" />
+    <Content Include="Script\images\abc 1.png" />
+    <Content Include="Script\images\AN HOA.png" />
+    <Content Include="Script\images\background\banner2.png" />
+    <Content Include="Script\images\background\bg-pattern.png" />
+    <Content Include="Script\images\background\bg-posts.png" />
+    <Content Include="Script\images\background\footer-bg.jpg" />
+    <Content Include="Script\images\background\map-pattern.png" />
+    <Content Include="Script\images\background\page-title-bg.jpg" />
+    <Content Include="Script\images\background\testimonials-bg.jpg" />
+    <Content Include="Script\images\clients\1.jpg" />
+    <Content Include="Script\images\clients\1.png" />
+    <Content Include="Script\images\clients\2.jpg" />
+    <Content Include="Script\images\clients\2.png" />
+    <Content Include="Script\images\clients\3.jpg" />
+    <Content Include="Script\images\clients\3.png" />
+    <Content Include="Script\images\clients\4.jpg" />
+    <Content Include="Script\images\clients\4.png" />
+    <Content Include="Script\images\clients\5.png" />
+    <Content Include="Script\images\clients\6.png" />
+    <Content Include="Script\images\clients\7.png" />
+    <Content Include="Script\images\Cơ hội kinh doanh.jpg" />
+    <Content Include="Script\images\download.png" />
+    <Content Include="Script\images\Faru cafe &amp; Protein.jpg" />
+    <Content Include="Script\images\filetype\blank.gif" />
+    <Content Include="Script\images\filetype\fancybox_loading%402x.gif" />
+    <Content Include="Script\images\filetype\fancybox_loading.gif" />
+    <Content Include="Script\images\filetype\fancybox_overlay.png" />
+    <Content Include="Script\images\filetype\fancybox_sprite%402x.png" />
+    <Content Include="Script\images\filetype\fancybox_sprite.png" />
+    <Content Include="Script\images\filetype\typedoc.png" />
+    <Content Include="Script\images\filetype\typepdf.png" />
+    <Content Include="Script\images\filetype\typexls.png" />
+    <Content Include="Script\images\Frame 27.png" />
+    <Content Include="Script\images\Frame 28.png" />
+    <Content Include="Script\images\Frame 29.png" />
+    <Content Include="Script\images\gallery\image-1.jpg" />
+    <Content Include="Script\images\gallery\image-10.jpg" />
+    <Content Include="Script\images\gallery\image-11.jpg" />
+    <Content Include="Script\images\gallery\image-12.jpg" />
+    <Content Include="Script\images\gallery\image-13.jpg" />
+    <Content Include="Script\images\gallery\image-2.jpg" />
+    <Content Include="Script\images\gallery\image-3.jpg" />
+    <Content Include="Script\images\gallery\image-4.jpg" />
+    <Content Include="Script\images\gallery\image-5.jpg" />
+    <Content Include="Script\images\gallery\image-6.jpg" />
+    <Content Include="Script\images\gallery\image-7.jpg" />
+    <Content Include="Script\images\gallery\image-8.jpg" />
+    <Content Include="Script\images\gallery\image-9.jpg" />
+    <Content Include="Script\images\Group-1.svg" />
+    <Content Include="Script\images\Group.svg" />
+    <Content Include="Script\images\Home page.jpg" />
+    <Content Include="Script\images\icons\icon-list.png" />
+    <Content Include="Script\images\icons\icon-location.png" />
+    <Content Include="Script\images\icons\iconfaru.png" />
+    <Content Include="Script\images\icons\mainiconfaru.png" />
+    <Content Include="Script\images\icons\preloader.GIF" />
+    <Content Include="Script\images\icons\submenu-icon.png" />
+    <Content Include="Script\images\image 1.png" />
+    <Content Include="Script\images\Khuyến mãi.jpg" />
+    <Content Include="Script\images\logo-1.png" />
+    <Content Include="Script\images\logo-2.png" />
+    <Content Include="Script\images\logo-3.png" />
+    <Content Include="Script\images\logobrand\bannerwin.png" />
+    <Content Include="Script\images\logobrand\farucafein.png" />
+    <Content Include="Script\images\logobrand\Group 5.png" />
+    <Content Include="Script\images\logobrand\Layer_1-1.png" />
+    <Content Include="Script\images\logobrand\Layer_1-1.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-2.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-3 - Copy.png" />
+    <Content Include="Script\images\logobrand\Layer_1-3.png" />
+    <Content Include="Script\images\logobrand\Layer_1-3.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-4.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-5.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-6.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-7.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-8.svg" />
+    <Content Include="Script\images\logobrand\Layer_1-9.svg" />
+    <Content Include="Script\images\logobrand\Layer_1.png" />
+    <Content Include="Script\images\logobrand\Layer_1.svg" />
+    <Content Include="Script\images\logobrand\logo-ly1.png" />
+    <Content Include="Script\images\logobrand\logowhite.png" />
+    <Content Include="Script\images\main-slider\1.jpg" />
+    <Content Include="Script\images\main-slider\2.jpg" />
+    <Content Include="Script\images\main-slider\3.png" />
+    <Content Include="Script\images\main-slider\4.png" />
+    <Content Include="Script\images\main-slider\5.png" />
+    <Content Include="Script\images\mẫu-cofe-house 1.png" />
+    <Content Include="Script\images\mẫu-cofe-house 2.png" />
+    <Content Include="Script\images\parallax\image-1.jpg" />
+    <Content Include="Script\images\Popup tuyển dụng.jpg" />
+    <Content Include="Script\images\product\img-gc.png" />
+    <Content Include="Script\images\product\img-httl.png" />
+    <Content Include="Script\images\product\img-mini.png" />
+    <Content Include="Script\images\product\img-mp.png" />
+    <Content Include="Script\images\product\img-nh.png" />
+    <Content Include="Script\images\product\img-product-1.png" />
+    <Content Include="Script\images\product\img-products-detail.png" />
+    <Content Include="Script\images\product\img-tpcn.png" />
+    <Content Include="Script\images\Property 1=Default.svg" />
+    <Content Include="Script\images\Property 1=Variant2.svg" />
+    <Content Include="Script\images\Rectangle 1-1.png" />
+    <Content Include="Script\images\Rectangle 1-2.png" />
+    <Content Include="Script\images\Rectangle 2-1.png" />
+    <Content Include="Script\images\Rectangle 2-2.png" />
+    <Content Include="Script\images\Rectangle 2.png" />
+    <Content Include="Script\images\Rectangle 6-1.png" />
+    <Content Include="Script\images\Rectangle 6.png" />
+    <Content Include="Script\images\resource\author-thumb-1.jpg" />
+    <Content Include="Script\images\resource\author-thumb-2.jpg" />
+    <Content Include="Script\images\resource\author-thumb-3.jpg" />
+    <Content Include="Script\images\resource\blog-image-1.jpg" />
+    <Content Include="Script\images\resource\blog-image-10.jpg" />
+    <Content Include="Script\images\resource\blog-image-11.jpg" />
+    <Content Include="Script\images\resource\blog-image-12.jpg" />
+    <Content Include="Script\images\resource\blog-image-13.jpg" />
+    <Content Include="Script\images\resource\blog-image-2.jpg" />
+    <Content Include="Script\images\resource\blog-image-3.jpg" />
+    <Content Include="Script\images\resource\blog-image-4.jpg" />
+    <Content Include="Script\images\resource\blog-image-5.jpg" />
+    <Content Include="Script\images\resource\blog-image-6.jpg" />
+    <Content Include="Script\images\resource\blog-image-7.jpg" />
+    <Content Include="Script\images\resource\blog-image-8.jpg" />
+    <Content Include="Script\images\resource\blog-image-9.jpg" />
+    <Content Include="Script\images\resource\ceo-thumb.jpg" />
+    <Content Include="Script\images\resource\consultinglarge.png" />
+    <Content Include="Script\images\resource\error-image.png" />
+    <Content Include="Script\images\resource\featured-image-1.jpg" />
+    <Content Include="Script\images\resource\featured-image-10.jpg" />
+    <Content Include="Script\images\resource\featured-image-11.jpg" />
+    <Content Include="Script\images\resource\featured-image-12.jpg" />
+    <Content Include="Script\images\resource\featured-image-13.jpg" />
+    <Content Include="Script\images\resource\featured-image-14.jpg" />
+    <Content Include="Script\images\resource\featured-image-15.jpg" />
+    <Content Include="Script\images\resource\featured-image-16.jpg" />
+    <Content Include="Script\images\resource\featured-image-17.jpg" />
+    <Content Include="Script\images\resource\featured-image-18.jpg" />
+    <Content Include="Script\images\resource\featured-image-19.jpg" />
+    <Content Include="Script\images\resource\featured-image-2.jpg" />
+    <Content Include="Script\images\resource\featured-image-20.jpg" />
+    <Content Include="Script\images\resource\featured-image-21.jpg" />
+    <Content Include="Script\images\resource\featured-image-22.jpg" />
+    <Content Include="Script\images\resource\featured-image-23.jpg" />
+    <Content Include="Script\images\resource\featured-image-24.jpg" />
+    <Content Include="Script\images\resource\featured-image-25.jpg" />
+    <Content Include="Script\images\resource\featured-image-26.jpg" />
+    <Content Include="Script\images\resource\featured-image-27.jpg" />
+    <Content Include="Script\images\resource\featured-image-28.jpg" />
+    <Content Include="Script\images\resource\featured-image-29.jpg" />
+    <Content Include="Script\images\resource\featured-image-3.jpg" />
+    <Content Include="Script\images\resource\featured-image-30.jpg" />
+    <Content Include="Script\images\resource\featured-image-31.jpg" />
+    <Content Include="Script\images\resource\featured-image-32.jpg" />
+    <Content Include="Script\images\resource\featured-image-33.jpg" />
+    <Content Include="Script\images\resource\featured-image-34.jpg" />
+    <Content Include="Script\images\resource\featured-image-4.jpg" />
+    <Content Include="Script\images\resource\featured-image-5.jpg" />
+    <Content Include="Script\images\resource\featured-image-6.jpg" />
+    <Content Include="Script\images\resource\featured-image-7.jpg" />
+    <Content Include="Script\images\resource\featured-image-8.jpg" />
+    <Content Include="Script\images\resource\featured-image-9.jpg" />
+    <Content Include="Script\images\resource\fluid-image-1.jpg" />
+    <Content Include="Script\images\resource\fluid-image-2.jpg" />
+    <Content Include="Script\images\resource\fluid-image-3.jpg" />
+    <Content Include="Script\images\resource\fluid-image-4.jpg" />
+    <Content Include="Script\images\resource\imagecafe.png" />
+    <Content Include="Script\images\resource\imagecafe2.png" />
+    <Content Include="Script\images\resource\imagecontent1.png" />
+    <Content Include="Script\images\resource\imagecontent2.png" />
+    <Content Include="Script\images\resource\imagelarge.png" />
+    <Content Include="Script\images\resource\imagetele.png" />
+    <Content Include="Script\images\resource\img-bridge.png" />
+    <Content Include="Script\images\resource\payment-logos.png" />
+    <Content Include="Script\images\resource\post-thumb-1.jpg" />
+    <Content Include="Script\images\resource\post-thumb-2.jpg" />
+    <Content Include="Script\images\resource\post-thumb-3.jpg" />
+    <Content Include="Script\images\resource\post-thumb-4.jpg" />
+    <Content Include="Script\images\resource\post-thumb-5.jpg" />
+    <Content Include="Script\images\resource\post-thumb-6.jpg" />
+    <Content Include="Script\images\resource\post-thumb-7.jpg" />
+    <Content Include="Script\images\resource\post-thumb-8.jpg" />
+    <Content Include="Script\images\resource\signature-image-1.png" />
+    <Content Include="Script\images\resource\team-image-1.jpg" />
+    <Content Include="Script\images\resource\team-image-2.jpg" />
+    <Content Include="Script\images\resource\team-image-3.jpg" />
+    <Content Include="Script\images\resource\team-image-4.jpg" />
+    <Content Include="Script\images\resource\team-image-5.jpg" />
+    <Content Include="Script\images\resource\testi-image-1.jpg" />
+    <Content Include="Script\images\resource\testi-image-2.jpg" />
+    <Content Include="Script\images\resource\testi-image-3.jpg" />
+    <Content Include="Script\images\resource\video-image-1.jpg" />
+    <Content Include="Script\images\resource\videocontent.png" />
+    <Content Include="Script\images\Sống khỏe.jpg" />
+    <Content Include="Script\images\Tin chi tiết.jpg" />
+    <Content Include="Script\images\tin tức ăn healthy.jpg" />
+    <Content Include="Script\images\Trang chi tiết sản phẩm.jpg" />
+    <Content Include="Script\images\Trang sản phẩm.jpg" />
+    <Content Include="Script\images\Tuyển dụng.jpg" />
+    <Content Include="Script\images\Vector-1.svg" />
+    <Content Include="Script\images\Vector-2.svg" />
+    <Content Include="Script\images\Vector-3.svg" />
+    <Content Include="Script\images\Vector-4.svg" />
+    <Content Include="Script\images\Vector-5.svg" />
+    <Content Include="Script\images\Vector.svg" />
+    <Content Include="Script\images\Về chúng tôi.jpg" />
+    <Content Include="Script\js\script.js" />
+    <Content Include="SongKhoe.aspx" />
+    <Content Include="TuyenDung.aspx" />
+    <Content Include="VeChungToi.aspx" />
+    <Content Include="CoHoiKinhDoanh.aspx" />
+    <Content Include="control\contentAbout.ascx" />
+    <Content Include="control\contentFaruCafe.ascx" />
+    <Content Include="control\homeBanner.ascx" />
+    <Content Include="control\homeBusiness.ascx" />
+    <Content Include="control\homeFaruCafe.ascx" />
+    <Content Include="control\homeLiveStrong.ascx" />
+    <Content Include="control\homePartner.ascx" />
+    <Content Include="control\homeProduct.ascx" />
+    <Content Include="control\mainFooter.ascx" />
+    <Content Include="control\mainHeader.ascx" />
+    <Content Include="control\mainSlider.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FaruCafe.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Script\assets\js\invoice\invoice.js" />
+    <Content Include="Script\assets\js\invoice\jspdf.min.js" />
+    <Content Include="Script\assets\js\main.js" />
+    <Content Include="Script\assets\js\plugins\counterup.js" />
+    <Content Include="Script\assets\js\plugins\images-loaded.js" />
+    <Content Include="Script\assets\js\plugins\isotope.js" />
+    <Content Include="Script\assets\js\plugins\jquery-ui.js" />
+    <Content Include="Script\assets\js\plugins\jquery.countdown.min.js" />
+    <Content Include="Script\assets\js\plugins\jquery.elevatezoom.js" />
+    <Content Include="Script\assets\js\plugins\jquery.syotimer.min.js" />
+    <Content Include="Script\assets\js\plugins\jquery.theia.sticky.js" />
+    <Content Include="Script\assets\js\plugins\jquery.vticker-min.js" />
+    <Content Include="Script\assets\js\plugins\leaflet.js" />
+    <Content Include="Script\assets\js\plugins\magnific-popup.js" />
+    <Content Include="Script\assets\js\plugins\perfect-scrollbar.js" />
+    <Content Include="Script\assets\js\plugins\scrollup.js" />
+    <Content Include="Script\assets\js\plugins\select2.min.js" />
+    <Content Include="Script\assets\js\plugins\slick.js" />
+    <Content Include="Script\assets\js\plugins\slider-range.js" />
+    <Content Include="Script\assets\js\plugins\waypoints.js" />
+    <Content Include="Script\assets\js\plugins\wow.js" />
+    <Content Include="Script\assets\js\shop.js" />
+    <Content Include="Script\assets\js\vendor\bootstrap.bundle.min.js" />
+    <Content Include="Script\assets\js\vendor\jquery-3.6.0.min.js" />
+    <Content Include="Script\assets\js\vendor\jquery-migrate-3.3.0.min.js" />
+    <Content Include="Script\assets\js\vendor\modernizr-3.6.0.min.js" />
+    <Content Include="Script\css\animate.css" />
+    <Content Include="Script\css\assets\arrowleft.png" />
+    <Content Include="Script\css\assets\arrowright.png" />
+    <Content Include="Script\css\assets\arrow_left.png" />
+    <Content Include="Script\css\assets\arrow_left2.png" />
+    <Content Include="Script\css\assets\arrow_right.png" />
+    <Content Include="Script\css\assets\arrow_right2.png" />
+    <Content Include="Script\css\assets\boxed_bgtile.png" />
+    <Content Include="Script\css\assets\bullet.png" />
+    <Content Include="Script\css\assets\bullets.png" />
+    <Content Include="Script\css\assets\bullets2.png" />
+    <Content Include="Script\css\assets\bullet_boxed.png" />
+    <Content Include="Script\css\assets\coloredbg.png" />
+    <Content Include="Script\css\assets\gridtile.png" />
+    <Content Include="Script\css\assets\gridtile_3x3.png" />
+    <Content Include="Script\css\assets\gridtile_3x3_white.png" />
+    <Content Include="Script\css\assets\gridtile_white.png" />
+    <Content Include="Script\css\assets\large_left.png" />
+    <Content Include="Script\css\assets\large_right.png" />
+    <Content Include="Script\css\assets\loader.gif" />
+    <Content Include="Script\css\assets\navigdots.png" />
+    <Content Include="Script\css\assets\navigdots_bgtile.png" />
+    <Content Include="Script\css\assets\shadow1.png" />
+    <Content Include="Script\css\assets\shadow2.png" />
+    <Content Include="Script\css\assets\shadow3.png" />
+    <Content Include="Script\css\assets\small_left.png" />
+    <Content Include="Script\css\assets\small_left_boxed.png" />
+    <Content Include="Script\css\assets\small_right.png" />
+    <Content Include="Script\css\assets\small_right_boxed.png" />
+    <Content Include="Script\css\assets\timer.png" />
+    <Content Include="Script\css\bootstrap.css" />
+    <Content Include="Script\css\flaticon.css" />
+    <Content Include="Script\css\font-awesome.css" />
+    <Content Include="Script\css\hover.css" />
+    <Content Include="Script\css\jquery.fancybox.css" />
+    <Content Include="Script\css\owl.css" />
+    <Content Include="Script\css\responsive.css" />
+    <Content Include="Script\css\revolution-slider.css" />
+    <Content Include="Script\css\slick.css" />
+    <Content Include="Script\fonts\flaticon.svg" />
+    <Content Include="Script\fonts\fontawesome-webfont.svg" />
+    <Content Include="Script\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Script\fonts\revicons90c6.svg" />
+    <Content Include="Script\js\bootstrap.min.js" />
+    <Content Include="Script\js\isotope.js" />
+    <Content Include="Script\js\jquery.fancybox-media.js" />
+    <Content Include="Script\js\jquery.fancybox.pack.js" />
+    <Content Include="Script\js\jquery.js" />
+    <Content Include="Script\js\map-script.js" />
+    <Content Include="Script\js\mixitup.js" />
+    <Content Include="Script\js\owl.js" />
+    <Content Include="Script\js\revolution.min.js" />
+    <Content Include="Script\js\validate.js" />
+    <Content Include="Script\js\wow.js" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChiTietBaiViet.aspx.cs">
+      <DependentUpon>ChiTietBaiViet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietBaiViet.aspx.designer.cs">
+      <DependentUpon>ChiTietBaiViet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChuDeBaiViet.aspx.cs">
+      <DependentUpon>ChuDeBaiViet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChuDeBaiViet.aspx.designer.cs">
+      <DependentUpon>ChuDeBaiViet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="control\bannerArticleCategory.ascx.cs">
+      <DependentUpon>bannerArticleCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\bannerArticleCategory.ascx.designer.cs">
+      <DependentUpon>bannerArticleCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\bannerArticleDetails.ascx.cs">
+      <DependentUpon>bannerArticleDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\bannerArticleDetails.ascx.designer.cs">
+      <DependentUpon>bannerArticleDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\bannerBusinees.ascx.cs">
+      <DependentUpon>bannerBusinees.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\bannerBusinees.ascx.designer.cs">
+      <DependentUpon>bannerBusinees.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\bannerPromotion.ascx.cs">
+      <DependentUpon>bannerPromotion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\bannerPromotion.ascx.designer.cs">
+      <DependentUpon>bannerPromotion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\contentArticledetails.ascx.cs">
+      <DependentUpon>contentArticledetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\contentArticledetails.ascx.designer.cs">
+      <DependentUpon>contentArticledetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\contentBusinees.ascx.cs">
+      <DependentUpon>contentBusinees.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\contentBusinees.ascx.designer.cs">
+      <DependentUpon>contentBusinees.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\contentLiveStrong.ascx.cs">
+      <DependentUpon>contentLiveStrong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\contentLiveStrong.ascx.designer.cs">
+      <DependentUpon>contentLiveStrong.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\detailedDescription.ascx.cs">
+      <DependentUpon>detailedDescription.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\detailedDescription.ascx.designer.cs">
+      <DependentUpon>detailedDescription.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\endArticleCategory.ascx.cs">
+      <DependentUpon>endArticleCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\endArticleCategory.ascx.designer.cs">
+      <DependentUpon>endArticleCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\girdArticleCategory.ascx.cs">
+      <DependentUpon>girdArticleCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\girdArticleCategory.ascx.designer.cs">
+      <DependentUpon>girdArticleCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\promotionPageArticles.ascx.cs">
+      <DependentUpon>promotionPageArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\promotionPageArticles.ascx.designer.cs">
+      <DependentUpon>promotionPageArticles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\recruitmentPageArticles.ascx.cs">
+      <DependentUpon>recruitmentPageArticles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\recruitmentPageArticles.ascx.designer.cs">
+      <DependentUpon>recruitmentPageArticles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\RelatedArticlesDetails.ascx.cs">
+      <DependentUpon>RelatedArticlesDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\RelatedArticlesDetails.ascx.designer.cs">
+      <DependentUpon>RelatedArticlesDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\sliderLiveStrong.ascx.cs">
+      <DependentUpon>sliderLiveStrong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\sliderLiveStrong.ascx.designer.cs">
+      <DependentUpon>sliderLiveStrong.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\topArticleCategory.ascx.cs">
+      <DependentUpon>topArticleCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\topArticleCategory.ascx.designer.cs">
+      <DependentUpon>topArticleCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\topDescriptionProduct.ascx.cs">
+      <DependentUpon>topDescriptionProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\topDescriptionProduct.ascx.designer.cs">
+      <DependentUpon>topDescriptionProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\topRecruitment.ascx.cs">
+      <DependentUpon>topRecruitment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\topRecruitment.ascx.designer.cs">
+      <DependentUpon>topRecruitment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietSanPham.aspx.cs">
+      <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietSanPham.aspx.designer.cs">
+      <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KhuyenMai.aspx.cs">
+      <DependentUpon>KhuyenMai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KhuyenMai.aspx.designer.cs">
+      <DependentUpon>KhuyenMai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SanPham.aspx.cs">
+      <DependentUpon>SanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SanPham.aspx.designer.cs">
+      <DependentUpon>SanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SongKhoe.aspx.cs">
+      <DependentUpon>SongKhoe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SongKhoe.aspx.designer.cs">
+      <DependentUpon>SongKhoe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TuyenDung.aspx.cs">
+      <DependentUpon>TuyenDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TuyenDung.aspx.designer.cs">
+      <DependentUpon>TuyenDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VeChungToi.aspx.cs">
+      <DependentUpon>VeChungToi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VeChungToi.aspx.designer.cs">
+      <DependentUpon>VeChungToi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CoHoiKinhDoanh.aspx.cs">
+      <DependentUpon>CoHoiKinhDoanh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoHoiKinhDoanh.aspx.designer.cs">
+      <DependentUpon>CoHoiKinhDoanh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="control\contentAbout.ascx.cs">
+      <DependentUpon>contentAbout.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\contentAbout.ascx.designer.cs">
+      <DependentUpon>contentAbout.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\contentFaruCafe.ascx.cs">
+      <DependentUpon>contentFaruCafe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\contentFaruCafe.ascx.designer.cs">
+      <DependentUpon>contentFaruCafe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\homeBanner.ascx.cs">
+      <DependentUpon>homeBanner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\homeBanner.ascx.designer.cs">
+      <DependentUpon>homeBanner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\homeBusiness.ascx.cs">
+      <DependentUpon>homeBusiness.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\homeBusiness.ascx.designer.cs">
+      <DependentUpon>homeBusiness.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\homeFaruCafe.ascx.cs">
+      <DependentUpon>homeFaruCafe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\homeFaruCafe.ascx.designer.cs">
+      <DependentUpon>homeFaruCafe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\homeLiveStrong.ascx.cs">
+      <DependentUpon>homeLiveStrong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\homeLiveStrong.ascx.designer.cs">
+      <DependentUpon>homeLiveStrong.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\homePartner.ascx.cs">
+      <DependentUpon>homePartner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\homePartner.ascx.designer.cs">
+      <DependentUpon>homePartner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\homeProduct.ascx.cs">
+      <DependentUpon>homeProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\homeProduct.ascx.designer.cs">
+      <DependentUpon>homeProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\mainFooter.ascx.cs">
+      <DependentUpon>mainFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\mainFooter.ascx.designer.cs">
+      <DependentUpon>mainFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\mainHeader.ascx.cs">
+      <DependentUpon>mainHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\mainHeader.ascx.designer.cs">
+      <DependentUpon>mainHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="control\mainSlider.ascx.cs">
+      <DependentUpon>mainSlider.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="control\mainSlider.ascx.designer.cs">
+      <DependentUpon>mainSlider.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FaruCafe.aspx.cs">
+      <DependentUpon>FaruCafe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaruCafe.aspx.designer.cs">
+      <DependentUpon>FaruCafe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Script\assets\fonts\uicons\uicons-regular-straight.eot" />
+    <Content Include="Script\assets\fonts\uicons\uicons-regular-straight.woff" />
+    <Content Include="Script\assets\fonts\uicons\uicons-regular-straight.woff2" />
+    <Content Include="Script\fonts\flaticon-1.eot" />
+    <Content Include="Script\fonts\flaticon.eot" />
+    <Content Include="Script\fonts\flaticon.ttf" />
+    <Content Include="Script\fonts\flaticon.woff" />
+    <Content Include="Script\fonts\fontawesome-webfont-1.eot" />
+    <Content Include="Script\fonts\fontawesome-webfont.eot" />
+    <Content Include="Script\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Script\fonts\fontawesome-webfont.woff" />
+    <Content Include="Script\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Script\fonts\glyphicons-halflings-regular-1.eot" />
+    <Content Include="Script\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Script\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Script\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Script\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Script\fonts\revicons90c6.eot" />
+    <Content Include="Script\fonts\revicons90c6.ttf" />
+    <Content Include="Script\fonts\revicons90c6.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64563</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44336/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
